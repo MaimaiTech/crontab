@@ -1,0 +1,21 @@
+{
+  "name": "mine-admin/crontab",
+  "version": "1.0.0",
+  "type": "mixed",
+  "description": "This is a sample plugin",
+  "author": [{
+    "name": "demo"
+  }],
+  "composer": {
+    "require": [],
+    "psr-4": {
+      "\\Plugin\\MineAdmin\\MineAdmin\\Crontab\\": "src"
+    },
+    "installScript": "Plugin\\MineAdmin\\MineAdmin\\Crontab\\InstallScript",
+    "uninstallScript": "Plugin\\MineAdmin\\MineAdmin\\Crontab\\UninstallScript",
+    "config": "Plugin\\MineAdmin\\MineAdmin\\Crontab\\ConfigProvider"
+  },
+  "package": {
+    "dependencies": []
+  }
+}
