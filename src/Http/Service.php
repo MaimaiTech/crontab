@@ -1,12 +1,12 @@
 <?php
 
-namespace Plugin\MineAdmin\Crontab\Controller;
+namespace Plugin\MineAdmin\Crontab\Http;
 
 use App\Service\IService;
 use Hyperf\Crontab\Strategy\StrategyInterface;
 use Hyperf\Database\Model\Collection;
 use Plugin\MineAdmin\Crontab\Model\Crontab;
-use Plugin\MineAdmin\Crontab\Repository;
+
 
 /**
  * @extends IService<Crontab>

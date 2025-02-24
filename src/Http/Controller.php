@@ -1,6 +1,6 @@
 <?php
 
-namespace Plugin\MineAdmin\Crontab\Controller;
+namespace Plugin\MineAdmin\Crontab\Http;
 
 use App\Http\Admin\Controller\AbstractController;
 use App\Http\Admin\Middleware\PermissionMiddleware;

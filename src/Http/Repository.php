@@ -1,6 +1,6 @@
 <?php
 
-namespace Plugin\MineAdmin\Crontab;
+namespace Plugin\MineAdmin\Crontab\Http;
 
 use App\Repository\IRepository;
 use Hyperf\Database\Model\Builder;

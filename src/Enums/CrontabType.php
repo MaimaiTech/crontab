@@ -15,7 +15,7 @@ enum CrontabType: string
     case Url = 'url';
 
     #[Message('执行某个类的 execute 方法')]
-    case Class = 'class';
+    case Classes = 'class';
 
     #[Message('执行某块代码')]
     case Eval = 'eval';

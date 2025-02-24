@@ -1,12 +1,11 @@
 <?php
 
-namespace Plugin\MineAdmin\Crontab\Controller;
+namespace Plugin\MineAdmin\Crontab\Http;
 
 
 use Hyperf\Validation\Request\FormRequest as HyperfFormRequest;
 use Hyperf\Validation\Rule;
 use Plugin\MineAdmin\Crontab\Enums\CrontabType;
-use Plugin\MineAdmin\Crontab\Model\Crontab;
 
 class FormRequest extends HyperfFormRequest
 {
