@@ -1,5 +1,5 @@
 <?php
-namespace Plugin\MineAdmin\MineAdmin\Crontab;
+namespace Plugin\MineAdmin\Crontab;
 
 class ConfigProvider
 {

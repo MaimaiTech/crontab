@@ -9,11 +9,11 @@
   "composer": {
     "require": [],
     "psr-4": {
-      "\\Plugin\\MineAdmin\\MineAdmin\\Crontab\\": "src"
+      "Plugin\\MineAdmin\\Crontab\\": "src"
     },
-    "installScript": "Plugin\\MineAdmin\\MineAdmin\\Crontab\\InstallScript",
-    "uninstallScript": "Plugin\\MineAdmin\\MineAdmin\\Crontab\\UninstallScript",
-    "config": "Plugin\\MineAdmin\\MineAdmin\\Crontab\\ConfigProvider"
+    "installScript": "Plugin\\MineAdmin\\Crontab\\InstallScript",
+    "uninstallScript": "Plugin\\MineAdmin\\Crontab\\UninstallScript",
+    "config": "Plugin\\MineAdmin\\Crontab\\ConfigProvider"
   },
   "package": {
     "dependencies": []
