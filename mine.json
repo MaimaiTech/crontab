@@ -2,12 +2,14 @@
   "name": "mine-admin/crontab",
   "version": "1.0.0",
   "type": "mixed",
-  "description": "This is a sample plugin",
+  "description": "MineAdmin 定时任务应用",
   "author": [{
-    "name": "demo"
+    "name": "MineAdmin"
   }],
   "composer": {
-    "require": [],
+    "require": {
+      "mineadmin/crontab": "~2.0"
+    },
     "psr-4": {
       "Plugin\\MineAdmin\\Crontab\\": "src"
     },
