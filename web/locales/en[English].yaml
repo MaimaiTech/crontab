@@ -1,47 +1,40 @@
+dictionary:
+  crontab:
+    url: URL task
+    class: Class task
+    eval: Eval code block task
+    callback: Callback task
+    command: Command task
+    yes: Yes
+    no: No
 mineCrontab:
   menu:
-    crontabManage: 定时任务管理
-  cgText:
-    mainTitle: Code Generator
-    subTitle: Provides CRUD Generation Capabilities
-    loadTable: Load Table
-    tableName: TableName
-    selectionAll: Whether to select the entire column
+    crontabManage: Crontab task management
+    index: Crontab task list
+    save: Add crontab task
+    update: Edit crontab task
+    delete: Delete crontab task
+    execute: Execute crontab task
   cols:
-    sort: Sort
-    name: Field Name
-    type: Physical Type
-    comment: Column Name/Form Name
-    required: Required
-    form: Form
-    list: List
-    query: Query
-    queryType: Query Type
-    component: Form Component
-    permission: Display Permission
+    name: Task name
+    memo: Task description
+    type: Task type
+    status: Task status
+    rule: Task rule
+    value: Call target
+    singleton: Singleton run
+    onOneServer: Single server run
+    nextTime: Next execution time
+    exceptionInfo: Exception information
+    executeTime: Execution time
   op:
-    settingComponent: Setting
-    formPermission: Form Permission
-    columnPermission: Table Column Permission
-  component:
-    input: Input Box
-    inputNumber: Number Input Box
-    cascader: Cascader
-    rate: Rating
-    selectV2: Dropdown Selector (Virtual)
-    treeSelect: Tree Selector
-    switch: Switch
-    timePicker: Time Picker
-    datePicker: Date-Time Picker
-    colorPicker: Color Picker
-    slider: Slider
-    autocomplete: Autocomplete
-    transfer: Transfer Box
-    MaTree: Tree Component
-    remoteSelect: Remote Dropdown
-    dictRadio: Dictionary Radio
-    dictCheckbox: Dictionary Checkbox
-    dictSelect: Dictionary Dropdown
-    iconPicker: Icon Picker
-    uploadFile: File Upload
-    uploadImage: Image Upload
+    executeOnce: Execute once
+    executeSuccess: Execute Success
+    executeFail: Execute Fail
+    run: Run
+    pause: Pause
+    other: Other operations
+    runLogs: Run logs
+    add: Add crontab task
+    edit: Edit
+    delete: Delete

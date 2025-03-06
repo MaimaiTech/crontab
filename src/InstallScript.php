@@ -33,7 +33,7 @@ class InstallScript {
         // 菜单
         $menu = [
             [
-                'name' => 'mine:crontab',
+                'name' => 'plugin:mine-admin:crontab',
                 'path' => '/mine-crontab',
                 'component' => 'mine-admin/crontab/views/index',
                 'meta' => [
@@ -51,7 +51,7 @@ class InstallScript {
                 ],
                 'children' => [
                     [
-                        'name' => 'mine:crontab:index',
+                        'name' => 'plugin:mine-admin:crontab:list',
                         'meta' => new Meta([
                             'title' => '定时任务列表',
                             'type' => 'B',
@@ -59,15 +59,15 @@ class InstallScript {
                         ]),
                     ],
                     [
-                        'name' => 'mine:crontab:save',
+                        'name' => 'plugin:mine-admin:crontab:create',
                         'meta' => new Meta([
-                            'title' => '定时任务保存',
+                            'title' => '定时任务新增',
                             'type' => 'B',
                             'i18n' => 'mineCrontab.menu.save',
                         ]),
                     ],
                     [
-                        'name' => 'mine:crontab:update',
+                        'name' => 'plugin:mine-admin:crontab:save',
                         'meta' => new Meta([
                             'title' => '定时任务更新',
                             'type' => 'B',
@@ -75,11 +75,19 @@ class InstallScript {
                         ]),
                     ],
                     [
-                        'name' => 'mine:crontab:delete',
+                        'name' => 'plugin:mine-admin:crontab:save:delete',
                         'meta' => new Meta([
                             'title' => '定时任务删除',
                             'type' => 'B',
                             'i18n' => 'mineCrontab.menu.delete',
+                        ]),
+                    ],
+                    [
+                        'name' => 'plugin:mine-admin:crontab:execute',
+                        'meta' => new Meta([
+                            'title' => '定时任务执行',
+                            'type' => 'B',
+                            'i18n' => 'mineCrontab.menu.execute',
                         ]),
                     ],
                 ]
