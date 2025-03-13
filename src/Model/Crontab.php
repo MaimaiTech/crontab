@@ -41,6 +41,10 @@ class Crontab extends Model
         'updated_at' => 'datetime'
     ];
 
+    protected array $attributes = [
+        'memo'  =>  ''
+    ];
+
     public function execute_logs(): HasMany
     {
         return $this->hasMany(CrontabExecuteLog::class)->orderByDesc('created_at');
