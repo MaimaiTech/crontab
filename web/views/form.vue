@@ -38,8 +38,8 @@ useForm('crontabFrom').then((form: MaFormExpose) => {
 // 创建操作
 function add(): Promise<any> {
   return new Promise((resolve, reject) => {
+    model.value.status = model.value.status === 1
     create(model.value).then((res: any) => {
-      model.value.status = model.value.status === 1
       res.code === ResultCode.SUCCESS ? resolve(res) : reject(res)
     }).catch((err) => {
       reject(err)
