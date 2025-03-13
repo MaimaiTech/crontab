@@ -1,6 +1,6 @@
 {
   "name": "mine-admin/crontab",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "mixed",
   "description": "MineAdmin 定时任务应用",
   "author": [{
