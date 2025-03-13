@@ -15,6 +15,7 @@ export default function getFormItems(formType: 'add' | 'edit' = 'add', t: any, m
     model.status = 1
     model.is_singleton = true
     model.is_on_one_server = true
+    model.memo = ''
   }
 
   return [

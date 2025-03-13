@@ -1,5 +1,5 @@
 <script setup lang="tsx">
-import { deleted, execute, list } from '$/mine-admin/crontab/api/crontab.ts'
+import { deleted, execute, list, save } from '$/mine-admin/crontab/api/crontab.ts'
 import useDialog from '@/hooks/useDialog.ts'
 import type { MaSearchItem } from '@mineadmin/search'
 import type { UseDialogExpose } from '@/hooks/useDialog.ts'
@@ -62,6 +62,17 @@ function getCrontabList(params: Record<string, any> = {}) {
 }
 
 getCrontabList()
+
+// 更新定时任务
+function enableOrDisable(item: any) {
+  item.status = !item.status
+  save(item.id as number, item).then((res: any) => {
+    res.code === ResultCode.SUCCESS ? msg.success(t('crud.updateSuccess')) : msg.error(res.message)
+    getCrontabList()
+  }).catch((err) => {
+    throw new Error(err)
+  })
+}
 
 // 执行定时任务
 function executeTask(id: number) {
@@ -179,7 +190,11 @@ const maDialog: UseDialogExpose = useDialog({
               <div class="absolute w-full flex justify-between -bottom-[10px]">
                 <div>
                   <el-button v-auth="['plugin:mine-admin:crontab:save']" circle>
-                    <ma-svg-icon :name="item.status ? 'material-symbols:play-arrow-rounded' : 'material-symbols:pause-rounded'" :size="20" />
+                    <ma-svg-icon
+                      :name="item.status ? 'material-symbols:play-arrow-rounded' : 'material-symbols:pause-rounded'"
+                      :size="20"
+                      @click="enableOrDisable(item)"
+                    />
                   </el-button>
                   <el-button v-auth="['plugin:mine-admin:crontab:execute']" @click="executeTask(item.id)">
                     {{ t('mineCrontab.op.executeOnce') }}
