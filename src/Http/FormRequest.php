@@ -25,7 +25,7 @@ class FormRequest extends HyperfFormRequest
             ],
             'rule' => 'required|string',
             'memo' => 'sometimes|string',
-            'status'    =>  'sometimes|integer',
+            'status'    =>  'sometimes|boolean',
             'is_singleton'    =>  'sometimes|boolean',
             'is_on_one_server'    =>  'sometimes|boolean',
             'type'  =>  [
