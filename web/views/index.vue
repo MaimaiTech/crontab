@@ -75,10 +75,12 @@ function enableOrDisable(item: any) {
 }
 
 // 执行定时任务
-function executeTask(id: number) {
-  const response: any = execute([id])
+async function executeTask(id: number) {
+  const response: any = await execute([id])
+  console.log(response)
   if (response.code === ResultCode.SUCCESS) {
     msg.success(t('mineCrontab.op.executeSuccess'))
+    getCrontabList()
   }
   else {
     msg.error(t('mineCrontab.op.executeFail'))

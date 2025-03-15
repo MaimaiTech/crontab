@@ -3,6 +3,7 @@
 namespace Plugin\MineAdmin\Crontab\Http;
 
 use App\Service\IService;
+use Hyperf\Crontab\Strategy\Executor;
 use Hyperf\Crontab\Strategy\StrategyInterface;
 use Hyperf\Database\Model\Collection;
 use Plugin\MineAdmin\Crontab\Model\Crontab;
@@ -15,7 +16,7 @@ class Service extends IService
 {
     public function __construct(
         protected readonly Repository $repository,
-        protected readonly StrategyInterface $strategy
+        protected readonly Executor $executor
     ){}
 
     public function execute(mixed $id): void
@@ -26,7 +27,7 @@ class Service extends IService
         $list = $this->repository->getQuery()->whereKey($id)->get();
         foreach ($list as $cronEntity){
             $cron = new \Mine\Crontab\Crontab($cronEntity->id);
-            $this->strategy->dispatch($cron);
+            $this->executor->execute($cron);
         }
     }
 }

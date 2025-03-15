@@ -7,6 +7,10 @@ dictionary:
     command: 命令任務
     yes: 是
     no: 否
+  status:
+    0: 正常
+    1: 失敗
+    2: 未知
 mineCrontab:
   menu:
     crontabManage: 定時任務管理
