@@ -1,6 +1,6 @@
 {
   "name": "mine-admin/crontab",
-  "version": "1.0.1",
+  "version": "1.0.7",
   "type": "mixed",
   "description": "MineAdmin 定时任务应用",
   "author": [{
@@ -8,7 +8,7 @@
   }],
   "composer": {
     "require": {
-      "mineadmin/crontab": "~2.0"
+      "mineadmin/crontab": "~3.0"
     },
     "psr-4": {
       "Plugin\\MineAdmin\\Crontab\\": "src"

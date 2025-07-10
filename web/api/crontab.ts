@@ -38,8 +38,15 @@ export function deleted(ids: number[]) {
 }
 
 /**
- * 删除定时任务
+ * 执行定时任务
  */
 export function execute(ids: number[]) {
   return http.post(`/admin/plugin/crontab/execute`, { ids })
+}
+
+/**
+ * 定时任务记录列表
+ */
+export function logList(params: any) {
+  return http.get('/admin/plugin/crontab/log/list', { params })
 }

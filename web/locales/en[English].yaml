@@ -8,8 +8,8 @@ dictionary:
     yes: Yes
     no: No
   status:
-    0: Normal
-    1: Failed
+    0: Failed
+    1: Normal
     2: Unknown
 mineCrontab:
   menu:
@@ -42,3 +42,6 @@ mineCrontab:
     add: Add crontab task
     edit: Edit
     delete: Delete
+  status:
+    running: Running
+    stopped: Stopped

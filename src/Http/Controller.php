@@ -1,5 +1,15 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of MineAdmin.
+ *
+ * @link     https://www.mineadmin.com
+ * @document https://doc.mineadmin.com
+ * @contact  root@imoi.cn
+ * @license  https://github.com/mineadmin/MineAdmin/blob/master/LICENSE
+ */
+
 namespace Plugin\MineAdmin\Crontab\Http;
 
 use App\Http\Admin\Controller\AbstractController;
@@ -23,7 +33,22 @@ class Controller extends AbstractController
 {
     public function __construct(
         private Service $service
-    ){}
+    ) {}
+
+    #[GetMapping(
+        path: 'log/list',
+    )]
+    #[Permission('plugin:mine-admin:crontab:list')]
+    public function logList(RequestInterface $request): Result
+    {
+        return $this->success(
+            $this->service->logList(
+                $request->all(),
+                $this->getCurrentPage(),
+                $this->getPageSize()
+            )
+        );
+    }
 
     #[GetMapping(
         path: 'list',
@@ -55,9 +80,9 @@ class Controller extends AbstractController
         path: '{id}/save',
     )]
     #[Permission('plugin:mine-admin:crontab:save')]
-    public function save(int $id,FormRequest $request): Result
+    public function save(int $id, FormRequest $request): Result
     {
-        if ($this->service->updateById($id,$request->validated())){
+        if ($this->service->updateById($id, $request->validated())) {
             return $this->success(
                 $this->service->findById($id)
             );
@@ -71,25 +96,28 @@ class Controller extends AbstractController
     #[Permission('plugin:mine-admin:crontab:delete')]
     public function delete(RequestInterface $request): Result
     {
-        $ids = Arr::get($request->all(),'ids',[]);
-        if (empty($ids)){
+        $ids = Arr::get($request->all(), 'ids', []);
+        if (empty($ids)) {
             return $this->error('请选择要删除的数据');
         }
         $deleteCount = $this->service->deleteById($ids);
-        if ($deleteCount){
-            return $this->success(sprintf('成功删除%s条数据',$deleteCount));
+        if ($deleteCount) {
+            return $this->success(\sprintf('成功删除%s条数据', $deleteCount));
         }
         return $this->error('删除失败');
     }
 
+    /**
+     * @throws \Throwable
+     */
     #[PostMapping(
         path: 'execute'
     )]
     #[Permission('plugin:mine-admin:crontab:execute')]
     public function execute(RequestInterface $request): Result
     {
-        $ids = Arr::get($request->all(),'ids',[]);
-        if (empty($ids)){
+        $ids = Arr::get($request->all(), 'ids', []);
+        if (empty($ids)) {
             return $this->error('请选择一条任务执行');
         }
         $this->service->execute($ids);

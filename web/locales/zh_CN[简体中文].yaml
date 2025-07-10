@@ -8,12 +8,12 @@ dictionary:
     yes: 是
     no: 否
   status:
-    0: 成功
-    1: 失败
+    0: 失败
+    1: 成功
     2: 未知
 mineCrontab:
   menu:
-    crontabManage: 定时任务管理
+    crontabManage: 定时任务
     index: 定时任务列表
     save: 添加定时任务
     update: 编辑定时任务
@@ -42,3 +42,6 @@ mineCrontab:
     add: 添加定时任务
     edit: 编辑
     delete: 删除
+  status:
+    running: 运行中
+    stopped: 已停止

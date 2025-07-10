@@ -8,8 +8,8 @@ dictionary:
     yes: 是
     no: 否
   status:
-    0: 正常
-    1: 失敗
+    0: 失敗
+    1: 正常
     2: 未知
 mineCrontab:
   menu:
@@ -42,3 +42,6 @@ mineCrontab:
     add: 添加定時任務
     edit: 編輯
     delete: 删除
+  status:
+    running: 運行中
+    stopped: 已停止

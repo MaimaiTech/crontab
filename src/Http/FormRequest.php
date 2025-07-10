@@ -1,7 +1,16 @@
 <?php
 
-namespace Plugin\MineAdmin\Crontab\Http;
+declare(strict_types=1);
+/**
+ * This file is part of MineAdmin.
+ *
+ * @link     https://www.mineadmin.com
+ * @document https://doc.mineadmin.com
+ * @contact  root@imoi.cn
+ * @license  https://github.com/mineadmin/MineAdmin/blob/master/LICENSE
+ */
 
+namespace Plugin\MineAdmin\Crontab\Http;
 
 use Hyperf\Validation\Request\FormRequest as HyperfFormRequest;
 use Hyperf\Validation\Rule;
@@ -16,23 +25,23 @@ class FormRequest extends HyperfFormRequest
 
     public function rules(): array
     {
-        $rules =  [
+        $rules = [
             'name' => [
                 'required',
                 'string',
                 'max:255',
-                'unique:crontab,name'
+                'unique:crontab,name',
             ],
             'rule' => 'required|string',
             'memo' => 'sometimes|string',
-            'status'    =>  'sometimes|boolean',
-            'is_singleton'    =>  'sometimes|boolean',
-            'is_on_one_server'    =>  'sometimes|boolean',
-            'type'  =>  [
+            'status' => 'sometimes|int',
+            'is_singleton' => 'sometimes|boolean',
+            'is_on_one_server' => 'sometimes|boolean',
+            'type' => [
                 'required',
-                Rule::enum(CrontabType::class)
+                Rule::enum(CrontabType::class),
             ],
-            'value' => 'required|string'
+            'value' => 'required|string',
         ];
         if ($this->isMethod('put')) {
             $id = $this->route('id');
@@ -51,7 +60,7 @@ class FormRequest extends HyperfFormRequest
             'is_singleton' => '是否单例',
             'is_on_one_server' => '是否只在一台服务器上运行',
             'type' => '任务类型',
-            'value' => '值'
+            'value' => '值',
         ];
     }
 }
