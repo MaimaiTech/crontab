@@ -26,7 +26,7 @@ const model = ref<any>({})
 useForm('crontabFrom').then((form: MaFormExpose) => {
   if (formType === 'edit' && crontabData) {
     Object.keys(crontabData).map((key: string) => {
-      model.value[key] = key === 'status' ? crontabData[key] ? 1 : 2 : crontabData[key]
+      model.value[key] = crontabData[key]
     })
   }
   form.setItems(getFormItems(formType, t, model.value))
