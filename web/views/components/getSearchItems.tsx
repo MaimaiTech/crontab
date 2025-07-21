@@ -35,7 +35,16 @@ export default function getSearchItems(t: any): MaSearchItem[] {
       render: () => MaDictSelect,
       renderProps: {
         placeholder: t('form.pleaseSelect', { msg: t('mineCrontab.cols.status') }),
-        dictName: 'system-status',
+        data: [
+          {
+            label: t('mineCrontab.status.stopped'),
+            value: 0,
+          },
+          {
+            label: t('mineCrontab.status.running'),
+            value: 1,
+          },
+        ],
       },
     },
   ]

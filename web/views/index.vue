@@ -56,7 +56,7 @@ function getCrontabList(params: Record<string, any> = {}) {
 
 // 更新定时任务
 function enableOrDisable(item: any) {
-  item.status = item.status === 1 ? 2 : 1
+  item.status = !item.status
   save(item.id as number, item).then((res: any) => {
     res.code === ResultCode.SUCCESS ? msg.success(t('crud.updateSuccess')) : msg.error(res.message)
     getCrontabList()
@@ -114,7 +114,7 @@ const maDialog: UseDialogExpose = useDialog({
               msg.alertError(err)
             })
             break
-          // 修改
+            // 修改
           case 'edit':
             formRef.value.edit().then((res: any) => {
               res.code === 200 ? msg.success(t('crud.updateSuccess')) : msg.error(res.message)
@@ -199,9 +199,9 @@ onMounted(() => {
               <div class="relative z-2">
                 <div class="flex justify-between">
                   <span>{{ item.id }} - {{ item.name }}</span>
-                  <el-text :type="item.status === 1 ? 'primary' : 'danger'">
+                  <el-text :type="item.status ? 'primary' : 'danger'">
                     <ma-svg-icon size="1.5em" name="i-ph:dot-outline-fill" />
-                    <span>{{ item.status === 1 ? t('mineCrontab.status.running') : t('mineCrontab.status.stopped')
+                    <span>{{ item.status ? t('mineCrontab.status.running') : t('mineCrontab.status.stopped')
                     }}</span>
                   </el-text>
                 </div>
@@ -252,7 +252,7 @@ onMounted(() => {
                 <div>
                   <el-button v-auth="['plugin:mine-admin:crontab:save']" circle>
                     <ma-svg-icon
-                      :name="item.status === 1 ? 'material-symbols:pause-rounded' : 'material-symbols:play-arrow-rounded'"
+                      :name="item.status ? 'material-symbols:pause-rounded' : 'material-symbols:play-arrow-rounded'"
                       :size="20" @click="enableOrDisable(item)"
                     />
                   </el-button>

@@ -21,7 +21,7 @@ use Plugin\MineAdmin\Crontab\Enums\CrontabType;
  * @property int $id
  * @property string $name 名称
  * @property string $memo 备注
- * @property int $status 状态
+ * @property bool $status 状态
  * @property bool $is_on_one_server 是否只在一台服务器上运行
  * @property bool $is_singleton 是否单例
  * @property CrontabType $type 类型
@@ -43,7 +43,7 @@ class Crontab extends Model
     ];
 
     protected array $casts = [
-        'status' => 'int',
+        'status' => 'bool',
         'is_on_one_server' => 'bool',
         'is_singleton' => 'bool',
         'type' => CrontabType::class,

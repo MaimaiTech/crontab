@@ -12,7 +12,7 @@ import CrontabGenerator from './crontabGenerator.vue'
 
 export default function getFormItems(formType: 'add' | 'edit' = 'add', t: any, model: any): MaFormItem[] {
   if (formType === 'add') {
-    model.status = 1
+    model.status = true
     model.is_singleton = true
     model.is_on_one_server = true
     model.memo = ''
@@ -96,8 +96,7 @@ export default function getFormItems(formType: 'add' | 'edit' = 'add', t: any, m
       prop: 'status',
       render: () => <ma-dict-radio />,
       renderProps: {
-        placeholder: t('form.pleaseInput', { msg: t('crud.status') }),
-        dictName: 'system-status',
+        dictName: 'crontab-yes-no',
       },
     },
   ]

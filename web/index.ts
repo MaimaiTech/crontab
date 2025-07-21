@@ -17,7 +17,7 @@ const pluginConfig: Plugin.PluginConfig = {
     enable: true,
     info: {
       name: 'mine-admin/crontab',
-      version: '1.0.7',
+      version: '1.0.8',
       author: 'MineAdmin',
       description: 'MineAdmin 定时任务应用',
     },

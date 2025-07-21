@@ -1,11 +1,13 @@
 {
   "name": "mine-admin/crontab",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "type": "mixed",
   "description": "MineAdmin 定时任务应用",
-  "author": [{
-    "name": "MineAdmin"
-  }],
+  "author": [
+    {
+      "name": "MineAdmin"
+    }
+  ],
   "composer": {
     "require": {
       "mineadmin/crontab": "~3.0"
